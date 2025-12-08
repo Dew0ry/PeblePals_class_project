@@ -92,6 +92,12 @@
     border: 2px solid var(--text-black);
     border-radius: 8px;
     padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    > h2{
+        text-decoration: underline;}
 }
 .benefit-box.wide{
     grid-column: span 2;
@@ -110,4 +116,19 @@
 .blue {
     background-color: var(--blue-light);
     border-radius: 128px 128px 0px 0px;
+}
+
+.bullet{
+    display: flex;
+    border: 1px solid var(--text-black);
+    border-radius: 32px 4px 4px 32px;
+}
+.bullet-nr{
+    border-right: 1px solid var(--text-black);
+    width: 30px;
+    padding: 4px;
+
+}
+.bullet-text{
+    padding: 4px;
 }
