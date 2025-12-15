@@ -80,6 +80,14 @@
     >h2{
         text-decoration: underline;
     }
+    >a{
+    color: var(--text-white);
+    background-color: black;
+    border-radius: 32px;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 16px;
+    }
 }
 
 .benefit-grid{
@@ -115,11 +123,14 @@
  
 .cream, .cream-bg{
     background-color: var(--cream);
+    
+
 }
  
 .blue {
     background-color: var(--blue-light);
     border-radius: 128px 128px 0px 0px;
+    display: flex;
 }
 
 .bullet{
@@ -140,7 +151,9 @@
 
 .image1{
     gap: 32px;
+    flex-direction: row;
 }
+
 
 .cream{
     display: flex;
@@ -148,6 +161,24 @@
 
 @media (max-width: 600px) {
     .image1 {
+        flex-direction: column;
+    }
+}
+
+.steps{
+    display: flex;
+    gap: 32px;
+}
+.imggg{
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.imagess{
+    display: flex;
+    gap: 32px;
+}
+@media (max-width: 600px) {
+    .imagess {
         flex-direction: column;
     }
 }
