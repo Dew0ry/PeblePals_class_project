@@ -37,6 +37,7 @@
     background-color: var(--yellow);
     padding: 8px;
     border-bottom: 1px solid black;
+    gap: 32px;
 
     display: flex;
     align-items: center;
@@ -134,5 +135,20 @@
 }
 .bullet-text{
     padding: 4px;
+    text-wrap: nowrap;
+}
+
+.image1{
+    gap: 32px;
+}
+
+.cream{
+    display: flex;
+}
+
+@media (max-width: 600px) {
+    .image1 {
+        flex-direction: column;
+    }
 }
 
