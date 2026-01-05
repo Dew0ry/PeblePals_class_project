@@ -183,3 +183,122 @@
     }
 }
 
+.imagess {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+
+.card {
+    background: #f2e9df;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: centre;
+  }
+  
+  .card img {
+    width: 100%;
+    display: block;
+  }
+  
+
+  .card-name {
+    background: black;
+    color: var(--text-white);
+    padding: 12px;
+    font-weight: bold;
+  }
+
+  .main-footer {
+    padding: 40px 20px 20px;
+    text-align:center;
+  }
+  
+  .footer-note {
+    font-weight: bold;
+    margin-bottom: 20px;
+
+  }
+  
+  .footer-box {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    color: var(--text-white);
+  }
+  
+  .footer-column h4 {
+    color: var(--yellow);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--yellow);
+    padding-bottom: 5px;
+  }
+  
+
+  .footer-column a {
+    display: block;
+    color: var(--text-white);
+    text-decoration: none;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  
+  .highlight {
+    color: var(--yellow);
+    font-weight: bold;
+  }
+  
+  .newsletter {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .newsletter input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--yellow);
+    background: transparent;
+    color: var(--text-white);
+  }
+  
+  .newsletter button {
+    background: var(--yellow);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+ 
+  .footer-bottom {
+    font-size: 13px;
+    color: var(--text-shadow);
+    text-align: center;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    display: grid;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    color: var(--text-white);
+    padding: 10px;
+  }
+
+  .main-footer {
+    background-image: url(../assets/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+  }
+
+  
