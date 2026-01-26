@@ -60,6 +60,7 @@
   background: none;
   padding: 8px;
   width: 100%;
+  resize: vertical;
 }
 .t-bottom-row{
   display: flex;
@@ -94,3 +95,4 @@
 .star:has(input:checked)~.star{
   background-image: url(/assets/star_black.svg);
 }
+

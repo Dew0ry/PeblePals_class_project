@@ -1,5 +1,5 @@
-// FOR LATER, IGNORE FOR NOW
-const testimonialList = [
+// if we dont have local testimonials, there will be loaded by default.
+let testimonialList = [
     {
         "rating": 4,
         "name": "Bobbi",
@@ -32,13 +32,26 @@ const testimonialList = [
     }
 ]
 
-let testimonialsBox = document.getElementById("testimonials-box")
- 
-for (let review of testimonialList){
- 
+//the function will load testimonials, if nothing is saved, use default.
+function loadTestimonial(){
+    let loaded = JSON.parse(localStorage.getItem("testimonials"))
+
+    if (loaded){
+        return loaded
+    } else {
+        return testimonialList
+    }
+}
+
+function saveTestimonials(){
+    localStorage.setItem("testimonials", JSON.stringify(testimonialList));
+}
+
+//Display testimonials 
+function drawNewTestimonial(name, message, rating) {
     let stars = "";
     for (let i = 0; i < 5; i++){
-        if (i < review.rating){
+        if (i < rating){
             stars += `<img class="star-img" src="assets/star_yellow.svg">`
         } else {
             stars += `<img class="star-img" src="assets/star_black.svg">`
@@ -51,13 +64,44 @@ for (let review of testimonialList){
             <div class="t-stars">
                 ${stars}
             </div>
-              <p class="t-name">~${review.name}</p>
+              <p class="t-name">~${name}</p>
         </div>
             <p class="t-messege">
-              ${review.review}
+              ${message}
             </p>
     </div>
     `
     testimonialsBox.innerHTML += testimonialToAdd
+  }
+
+testimonialList = loadTestimonial();
+let testimonialsBox = document.getElementById("testimonials-box")
+ 
+
+//Draw the loaded testimonials to the screen
+for (let review of testimonialList){
+    drawNewTestimonial(review.name, review.review, review.rating);
 }
+
+
+let tForm = document.getElementById("t-form");
+function addTestimonial(event){
+    event.preventDefault();
+
+    let name = document.getElementById("t-name").value;
+    let message = document.getElementById("t-message").value;
+    let rating = document.querySelector('input[name = rating]:checked').value;
+
+    drawNewTestimonial(name, message, rating)
+
+    // adds a formatted testimonials to our lists, then 
+    testimonialList.push({
+        "rating": rating,
+        "name": name,
+        "review": message
+    })
+    saveTestimonials();
+
+}
+tForm.addEventListener("submit", addTestimonial);
 
